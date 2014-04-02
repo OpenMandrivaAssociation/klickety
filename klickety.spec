@@ -1,5 +1,5 @@
 Name:		klickety
-Version:	4.12.3
+Version:	4.12.4
 Release:	1
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
@@ -40,6 +40,9 @@ groups to destroy them.
 %makeinstall_std -C build
 
 %changelog
+* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
+- New version 4.12.4
+
 * Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
 - New version 4.12.3
 
