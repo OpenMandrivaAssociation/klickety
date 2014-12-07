@@ -1,6 +1,6 @@
 Name:		klickety
 Version:	4.14.3
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
