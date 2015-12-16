@@ -1,5 +1,5 @@
 Name:		klickety
-Version:	15.08.3
+Version:	15.12.0
 Release:	1
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
