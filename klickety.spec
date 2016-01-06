@@ -10,6 +10,8 @@ Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{ve
 BuildRequires:	libkdegames-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	cmake(KDEGames)
+BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5DocTools)
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.5.74
 
