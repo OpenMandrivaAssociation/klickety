@@ -12,6 +12,11 @@ BuildRequires:	kdelibs-devel
 BuildRequires:	cmake(KDEGames)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(Qt5)
+BuildRequires:  cmake(ECM)
+BuildRequires:  cmake(KF5CoreAddons)
+BuildRequires:  cmake(KF5NotifyConfig)
+
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.5.74
 
@@ -22,11 +27,23 @@ groups to destroy them.
 
 %files
 %{_bindir}/klickety                                                                                    
-%{_datadir}/applications/kde4/klickety.desktop                                                         
-%{_datadir}/applications/kde4/ksame.desktop                                                            
-%{_datadir}/apps/klickety                                                                              
-%{_datadir}/apps/kconf_update/klickety.upd                                                             
-%{_datadir}/apps/kconf_update/klickety-2.0-inherit-ksame-highscore.pl                                  
+%{_datadir}/applications/org.kde.klickety.desktop                                                         
+%{_datadir}/applications/org.kde.ksame.desktop                                                            
+%{_datadir}/klickety/klickety.kcfg
+%{_datadir}/kconf_update/klickety.upd                                                             
+%{_datadir}/kconf_update/klickety-2.0-inherit-ksame-highscore.pl        
+%{_datadir}/klickety/themes/classic.svg
+%{_datadir}/klickety/themes/classic_preview.png
+%{_datadir}/klickety/themes/default.desktop
+%{_datadir}/klickety/themes/ksame.desktop
+%{_datadir}/klickety/themes/ksame.svg
+%{_datadir}/klickety/themes/ksame_old.desktop
+%{_datadir}/klickety/themes/ksame_old.svg
+%{_datadir}/klickety/themes/ksame_old_preview.png
+%{_datadir}/klickety/themes/ksame_preview.png
+%{_datadir}/knotifications5/klickety.notifyrc
+%{_datadir}/kxmlgui5/klickety/klicketyui.rc                          
+
 %doc %{_docdir}/HTML/en/klickety                                                                       
 %{_iconsdir}/*/*/apps/klickety.*                                                                       
 %{_iconsdir}/*/*/apps/ksame.*
@@ -35,12 +52,11 @@ groups to destroy them.
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4 \
-	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
