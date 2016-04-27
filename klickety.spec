@@ -1,5 +1,5 @@
 Name:		klickety
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
@@ -41,7 +41,7 @@ groups to destroy them.
 %{_datadir}/klickety/themes/ksame_old.svg
 %{_datadir}/klickety/themes/ksame_old_preview.png
 %{_datadir}/klickety/themes/ksame_preview.png
-%{_datadir}/knotifications5/klickety.notifyrc
+%{_datadir}/sounds/klickety
 %{_datadir}/kxmlgui5/klickety/klicketyui.rc                          
 
 %doc %{_docdir}/HTML/en/klickety                                                                       
