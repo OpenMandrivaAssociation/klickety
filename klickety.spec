@@ -16,6 +16,7 @@ BuildRequires:	cmake(Qt5)
 BuildRequires:  cmake(ECM)
 BuildRequires:  cmake(KF5CoreAddons)
 BuildRequires:  cmake(KF5NotifyConfig)
+BuildRequires:	cmake(KF5Crash)
 
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.5.74
