@@ -1,12 +1,12 @@
 Name:		klickety
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksame/
-Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	cmake(KDEGames)
@@ -26,7 +26,7 @@ Klickety is an adaptation of the Clickomania game. The rules are similar
 to those of the Same game: your goal is to clear the board by clicking on
 groups to destroy them.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/klickety                                                                                    
 %{_datadir}/applications/org.kde.klickety.desktop                                                         
 %{_datadir}/applications/org.kde.ksame.desktop                                                            
@@ -44,8 +44,6 @@ groups to destroy them.
 %{_datadir}/klickety/themes/ksame_preview.png
 %{_datadir}/sounds/klickety
 %{_datadir}/kxmlgui5/klickety/klicketyui.rc                          
-
-%doc %{_docdir}/HTML/en/klickety                                                                       
 %{_iconsdir}/*/*/apps/klickety.*                                                                       
 %{_iconsdir}/*/*/apps/ksame.*
 
@@ -60,4 +58,4 @@ groups to destroy them.
 
 %install
 %ninja_install -C build
-
+%find_lang %{name} --with-html
