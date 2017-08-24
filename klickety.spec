@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		klickety
-Version:	17.04.2
+Version:	17.08.0
 Release:	1
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
@@ -8,9 +8,7 @@ Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksame/
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	libkdegames-devel
-BuildRequires:	kdelibs-devel
-BuildRequires:	cmake(KDEGames)
+BuildRequires:	cmake(KF5KDEGames)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(Qt5)
