@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   klickety-17.12.1.tar.xz: 69e76d375147ff79e35ea386320d3ad7cfc349a1
+sources:
+  klickety-17.12.2.tar.xz: 52361c4017e1afadb658dcfd0cdc8fe36ddaca62
