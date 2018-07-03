@@ -12,10 +12,18 @@ BuildRequires:	cmake(KF5KDEGames)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(Qt5)
+BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:  cmake(ECM)
 BuildRequires:  cmake(KF5CoreAddons)
 BuildRequires:  cmake(KF5NotifyConfig)
 BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5DBusAddons)
 
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.5.74
