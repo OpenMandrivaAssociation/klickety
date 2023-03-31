@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		klickety
 Version:	22.12.3
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
