@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-klickety
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://www.kde.org/applications/games/ksame/
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/games/klickety/-/archive/%{gitbranch}/klickety-%{gitbranchd}.tar.bz2#/klickety-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/klickety-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(KDEGames6)
 BuildRequires:	cmake(KF6Notifications)
 BuildRequires:	cmake(KF6DocTools)
@@ -56,7 +63,7 @@ groups to destroy them.
 #------------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n klickety-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n klickety-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
