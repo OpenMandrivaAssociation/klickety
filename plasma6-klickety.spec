@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-klickety
-Version:	24.02.2
+Version:	24.05.0
 Release:	%{?git:0.%{git}.}1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
@@ -30,6 +30,8 @@ BuildRequires:	cmake(KF6ConfigWidgets)
 BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6DBusAddons)
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.6.74
@@ -46,15 +48,15 @@ groups to destroy them.
 %{_datadir}/klickety/klickety.kcfg
 %{_datadir}/kconf_update/klickety.upd                                                             
 %{_datadir}/kconf_update/klickety-2.0-inherit-ksame-highscore.pl        
-%{_datadir}/klickety/themes/classic.svg
 %{_datadir}/klickety/themes/classic_preview.png
 %{_datadir}/klickety/themes/default.desktop
 %{_datadir}/klickety/themes/ksame.desktop
-%{_datadir}/klickety/themes/ksame.svg
 %{_datadir}/klickety/themes/ksame_old.desktop
-%{_datadir}/klickety/themes/ksame_old.svg
 %{_datadir}/klickety/themes/ksame_old_preview.png
 %{_datadir}/klickety/themes/ksame_preview.png
+%{_datadir}/klickety/themes/classic.svgz
+%{_datadir}/klickety/themes/ksame.svgz
+%{_datadir}/klickety/themes/ksame_old.svgz
 %{_datadir}/metainfo/*.xml
 %{_datadir}/sounds/klickety
 %{_iconsdir}/*/*/apps/klickety.*                                                                       
@@ -62,15 +64,5 @@ groups to destroy them.
 
 #------------------------------------------------------------------------------
 
-%prep
-%autosetup -p1 -n klickety-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
+%install -a
 %find_lang klickety --with-html
