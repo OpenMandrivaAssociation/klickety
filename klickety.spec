@@ -6,7 +6,7 @@ Epoch:		1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/ksame/
+URL:		https://www.kde.org/applications/games/ksame/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KF5KDEGames)
 BuildRequires:	cmake(KF5Notifications)
