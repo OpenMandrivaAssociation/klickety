@@ -8,7 +8,7 @@ Release:	%{?git:0.%{git}.}1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://www.kde.org/applications/games/ksame/
+URL:		https://www.kde.org/applications/games/ksame/
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/klickety/-/archive/%{gitbranch}/klickety-%{gitbranchd}.tar.bz2#/klickety-%{git}.tar.bz2
 %else
