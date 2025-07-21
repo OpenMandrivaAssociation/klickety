@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		klickety
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	An adaptation of the Clickomania game
 Group:		Graphical desktop/KDE
@@ -36,6 +36,8 @@ BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 Provides:	ksame = %{EVRD}
 Obsoletes:	ksame < 1:4.6.74
 
+%rename plasma6-klickety
+
 %description
 Klickety is an adaptation of the Clickomania game. The rules are similar
 to those of the Same game: your goal is to clear the board by clicking on
@@ -61,8 +63,3 @@ groups to destroy them.
 %{_datadir}/sounds/klickety
 %{_iconsdir}/*/*/apps/klickety.*                                                                       
 %{_iconsdir}/*/*/apps/ksame.*
-
-#------------------------------------------------------------------------------
-
-%install -a
-%find_lang klickety --with-html
